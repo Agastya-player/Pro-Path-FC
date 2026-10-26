@@ -55,6 +55,8 @@ button { font: inherit; color: inherit; }
 }
 .brand-name { font-family: var(--display); font-size: 26px; letter-spacing: 1.5px; white-space: nowrap; }
 .brand-name em { font-style: normal; color: var(--accent); }
+.brand-name small { display: block; margin-top: 3px; font-family: var(--body); font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; line-height: 1; color: var(--muted); }
+.brand-name { line-height: 1; }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { text-decoration: none; color: var(--muted); font-weight: 600; font-size: 15px; transition: color .2s; }
 .nav-links a:hover { color: var(--text); }

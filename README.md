@@ -1,4 +1,4 @@
-# Pro Path FC ⚽
+# PP Pro Path FC - Merulas ⚽
 
 A bold, animated website celebrating the greatest players in world football — from Pelé, Maradona and Cruyff to Messi, Ronaldo, Mbappé and Lamine Yamal.
 

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pro Path FC — Legends of the Game</title>
+  <meta name="description" content="Pro Path FC celebrates the greatest players in world football — from Pelé and Maradona to Messi, Ronaldo and the new generation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
+</head>
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Pro Path FC home">
+      <span class="brand-badge">PP</span>
+      <span class="brand-name">Pro Path <em>FC</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#players">Players</a>
+      <a href="#numbers">By the numbers</a>
+      <a href="#path">The Path</a>
+    </nav>
+    <button class="btn btn-small btn-ghost" id="random-btn" type="button">🎲 Surprise me</button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">⚡ The home of football greatness</p>
+        <h1 class="hero-title">
+          <span>Walk the</span>
+          <span class="outline">path of</span>
+          <span class="accent">legends</span>
+        </h1>
+        <p class="hero-sub">
+          From the streets of Rosario to the Maracanã, meet the icons who changed the beautiful game
+          and the new stars rewriting the record books.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#players">Explore the players →</a>
+          <button class="btn btn-ghost" id="hero-random" type="button">🎲 Random legend</button>
+        </div>
+      </div>
+
+      <button class="spotlight reveal" id="spotlight" type="button" aria-label="Open spotlight player">
+        <div class="spotlight-ring" aria-hidden="true"></div>
+        <div class="spotlight-img" id="spotlight-img"></div>
+        <div class="spotlight-info">
+          <span class="spotlight-tag">Spotlight</span>
+          <strong id="spotlight-name">Loading…</strong>
+          <span id="spotlight-meta"></span>
+        </div>
+        <span class="spotlight-num" id="spotlight-num" aria-hidden="true">10</span>
+      </button>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker">
+        <div class="ticker-track" id="ticker-track"></div>
+      </div>
+    </div>
+
+    <!-- PLAYERS -->
+    <section class="section" id="players">
+      <div class="section-head reveal">
+        <p class="eyebrow">The greats</p>
+        <h2>Hall of <span class="accent">fame</span></h2>
+        <p class="section-sub">Tap any player to see their story.</p>
+      </div>
+
+      <div class="filters reveal" role="tablist" aria-label="Filter players">
+        <button class="chip active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="legend" type="button">🏆 Legends</button>
+        <button class="chip" data-filter="star" type="button">🌟 Modern stars</button>
+        <button class="chip" data-filter="FW" type="button">Forwards</button>
+        <button class="chip" data-filter="MF" type="button">Midfielders</button>
+        <button class="chip" data-filter="DF" type="button">Defenders</button>
+      </div>
+
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- NUMBERS -->
+    <section class="section numbers" id="numbers">
+      <div class="section-head reveal">
+        <p class="eyebrow">By the numbers</p>
+        <h2>Silverware <span class="accent">everywhere</span></h2>
+      </div>
+      <div class="stats">
+        <div class="stat reveal"><strong data-count="players">0</strong><span>Icons featured</span></div>
+        <div class="stat reveal"><strong data-count="nations">0</strong><span>Nations represented</span></div>
+        <div class="stat reveal"><strong data-count="ballon">0</strong><span>Ballon d'Or awards</span></div>
+        <div class="stat reveal"><strong data-count="worldcups">0</strong><span>World Cup winner's medals</span></div>
+      </div>
+    </section>
+
+    <!-- PATH -->
+    <section class="section" id="path">
+      <div class="section-head reveal">
+        <p class="eyebrow">The Pro Path</p>
+        <h2>Every legend <span class="accent">started somewhere</span></h2>
+      </div>
+      <div class="path">
+        <article class="path-step reveal">
+          <span class="path-num">01</span>
+          <h3>Fall in love</h3>
+          <p>A ball, a wall, a patch of grass. Every great career begins with endless hours of play.</p>
+        </article>
+        <article class="path-step reveal">
+          <span class="path-num">02</span>
+          <h3>Master the touch</h3>
+          <p>First touch, weak foot, vision. The best spend years making the hard things look easy.</p>
+        </article>
+        <article class="path-step reveal">
+          <span class="path-num">03</span>
+          <h3>Find your stage</h3>
+          <p>Academies, trials, debuts. Talent gets noticed when it shows up week after week.</p>
+        </article>
+        <article class="path-step reveal">
+          <span class="path-num">04</span>
+          <h3>Become a legend</h3>
+          <p>Big nights, big trophies, and moments the whole world remembers for decades.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Pro Path FC</strong> · Built for fans of the beautiful game.</p>
+    <p class="credit">
+      Player photos and bios load live from <a href="https://www.wikipedia.org/" target="_blank" rel="noopener">Wikipedia</a> /
+      <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>
+      under their respective free licences. Not affiliated with any club, league or player.
+    </p>
+  </footer>
+
+  <!-- PLAYER MODAL -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <button class="modal-close" type="button" data-close aria-label="Close">✕</button>
+      <button class="modal-nav prev" type="button" id="modal-prev" aria-label="Previous player">‹</button>
+      <button class="modal-nav next" type="button" id="modal-next" aria-label="Next player">›</button>
+      <div class="modal-media" id="modal-media"></div>
+      <div class="modal-body">
+        <p class="modal-eyebrow" id="modal-eyebrow"></p>
+        <h3 id="modal-name"></h3>
+        <p class="modal-nick" id="modal-nick"></p>
+        <ul class="modal-honours" id="modal-honours"></ul>
+        <p class="modal-bio" id="modal-bio"></p>
+        <a class="btn btn-small btn-ghost" id="modal-link" target="_blank" rel="noopener">Read more on Wikipedia ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- POP-UP TOAST -->
+  <aside class="toast" id="toast" aria-live="polite">
+    <button class="toast-close" type="button" id="toast-close" aria-label="Dismiss">✕</button>
+    <button class="toast-main" type="button" id="toast-main">
+      <span class="toast-img" id="toast-img"></span>
+      <span class="toast-text">
+        <span class="toast-tag">⚡ Did you know?</span>
+        <strong id="toast-name"></strong>
+        <span id="toast-fact"></span>
+      </span>
+    </button>
+  </aside>
+
+  <script src="players.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

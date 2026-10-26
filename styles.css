@@ -163,6 +163,35 @@ button { font: inherit; color: inherit; }
 .photo.loaded { opacity: 1; }
 .media.has-photo::after { background: linear-gradient(to bottom, transparent 50%, rgba(7, 8, 13, .3)); }
 
+/* ---------- Daily tips ---------- */
+.tips { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.tip-card {
+  position: relative; display: flex; flex-direction: column; align-items: flex-start;
+  padding: 32px; border-radius: 28px; overflow: hidden;
+  background: linear-gradient(160deg, var(--card), var(--bg-2)); border: 1px solid var(--line);
+}
+.tip-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: var(--tip-color); }
+.tip-card::after { content: ""; position: absolute; width: 260px; height: 260px; right: -90px; top: -90px; border-radius: 50%; background: var(--tip-color); opacity: .12; filter: blur(30px); pointer-events: none; }
+.tip-diet { --tip-color: var(--accent); }
+.tip-skill { --tip-color: var(--accent-3); }
+.tip-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; }
+.tip-kind { font-weight: 800; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--tip-color); }
+.tip-label { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: rgba(255, 255, 255, .06); color: var(--muted); }
+.tip-icon { font-size: 56px; line-height: 1; margin: 22px 0 10px; }
+.tip-title { margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4vw, 44px); line-height: 1; letter-spacing: .5px; }
+.tip-body { flex: 1; width: 100%; color: var(--muted); font-size: 16px; margin: 12px 0 24px; }
+.tip-body p { margin: 0; }
+.tip-body ol { margin: 12px 0; padding-left: 22px; color: var(--text); }
+.tip-body li { margin: 6px 0; }
+.tip-body li::marker { color: var(--tip-color); font-weight: 800; }
+.tip-level { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--tip-color); color: var(--tip-color); }
+.tip-why { font-size: 14px; }
+.tip-card.flip .tip-icon, .tip-card.flip .tip-title, .tip-card.flip .tip-body { animation: tip-in .5s both; }
+.tip-card.flip .tip-title { animation-delay: .05s; }
+.tip-card.flip .tip-body { animation-delay: .1s; }
+@keyframes tip-in { from { opacity: 0; transform: translateY(12px); } }
+.tips-note { text-align: center; color: var(--muted); font-size: 13px; max-width: 640px; margin: 20px auto 0; opacity: .8; }
+
 /* ---------- Stats ---------- */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .stat { padding: 34px 20px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); text-align: center; }
@@ -261,6 +290,7 @@ button { font: inherit; color: inherit; }
   .hero { grid-template-columns: 1fr; text-align: left; }
   .spotlight { max-width: 380px; }
   .stats, .path { grid-template-columns: repeat(2, 1fr); }
+  .tips { grid-template-columns: 1fr; }
   .modal-card { grid-template-columns: 1fr; }
   .modal-media { min-height: 320px; }
   .modal-nav { top: 160px; }
@@ -278,6 +308,7 @@ button { font: inherit; color: inherit; }
   .card-info span { font-size: 11px; }
   .stats, .path { grid-template-columns: 1fr; }
   .modal-body { padding: 28px 22px; }
+  .tip-card { padding: 24px; }
   .ticker-track span { font-size: 22px; }
 }
 @media (prefers-reduced-motion: reduce) {

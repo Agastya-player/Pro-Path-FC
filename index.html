@@ -25,6 +25,7 @@
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#players">Players</a>
+      <a href="#tips">Daily tips</a>
       <a href="#numbers">By the numbers</a>
       <a href="#path">The Path</a>
       <a class="nav-keep" href="about.html">About</a>
@@ -89,6 +90,38 @@
       </div>
 
       <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- DAILY TIPS -->
+    <section class="section" id="tips">
+      <div class="section-head reveal">
+        <p class="eyebrow">Train like a pro</p>
+        <h2>Daily <span class="accent">pro tips</span></h2>
+        <p class="section-sub">A new diet tip and skill drill every day · <span id="tips-date"></span></p>
+      </div>
+      <div class="tips">
+        <article class="tip-card tip-diet reveal" id="tip-diet">
+          <header class="tip-head">
+            <span class="tip-kind">🥗 Diet tip</span>
+            <span class="tip-label">Today's tip</span>
+          </header>
+          <div class="tip-icon" aria-hidden="true"></div>
+          <h3 class="tip-title"></h3>
+          <div class="tip-body"></div>
+          <button class="btn btn-small btn-ghost" type="button" data-next-tip="diet">🔄 Another diet tip</button>
+        </article>
+        <article class="tip-card tip-skill reveal" id="tip-skill">
+          <header class="tip-head">
+            <span class="tip-kind">⚽ Skill drill</span>
+            <span class="tip-label">Today's tip</span>
+          </header>
+          <div class="tip-icon" aria-hidden="true"></div>
+          <h3 class="tip-title"></h3>
+          <div class="tip-body"></div>
+          <button class="btn btn-small btn-ghost" type="button" data-next-tip="skill">🔄 Another skill</button>
+        </article>
+      </div>
+      <p class="tips-note">Tips are general advice for young players. Always listen to your coach, parents and doctor, especially about allergies or special diets.</p>
     </section>
 
     <!-- NUMBERS -->
@@ -179,5 +212,6 @@
 
   <script src="players.js"></script>
   <script src="script.js"></script>
+  <script src="tips.js"></script>
 </body>
 </html>

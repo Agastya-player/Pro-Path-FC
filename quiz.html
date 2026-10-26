@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Football Quiz — PP Pro Path FC - Merulas</title>
+  <meta name="description" content="Test your football knowledge with our 30-question quiz from PP Pro Path FC - Merulas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
+</head>
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="PP Pro Path FC - Merulas home">
+      <span class="brand-badge">PP</span>
+      <span class="brand-name">Pro Path <em>FC</em> - Merulas</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#players">Players</a>
+      <a href="index.html#tips">Daily tips</a>
+      <a href="quiz.html" aria-current="page" style="color: var(--text)">Quiz</a>
+      <a href="index.html#numbers">By the numbers</a>
+      <a href="index.html#path">The Path</a>
+      <a class="nav-keep" href="about.html">About</a>
+    </nav>
+    <a class="btn btn-small btn-ghost nav-home" href="index.html">← Home</a>
+  </header>
+
+  <main>
+    <section class="about-hero anim-in" id="quiz-top">
+      <p class="eyebrow">🧠 Test your knowledge</p>
+      <h1 class="hero-title">
+        <span>Football</span>
+        <span class="accent">quiz</span>
+      </h1>
+    </section>
+
+    <section class="section">
+      <div class="quiz-card">
+        <!-- START -->
+        <div id="screen-start" class="quiz-screen">
+          <div class="quiz-big-emoji" aria-hidden="true">⚽</div>
+          <h2 class="quiz-heading">Ready for kick-off?</h2>
+          <p class="quiz-lead">
+            <span id="total-questions">30</span> questions about World Cups, legends, clubs and the rules of the game.
+            Questions and answers are shuffled every time you play.
+          </p>
+          <button class="btn btn-primary" id="btn-start" type="button">Start the quiz →</button>
+          <p class="quiz-best" id="best-score"></p>
+        </div>
+
+        <!-- QUESTION -->
+        <div id="screen-quiz" class="quiz-screen" hidden>
+          <div class="quiz-top">
+            <span id="q-count"></span>
+            <span class="quiz-score" id="q-score"></span>
+          </div>
+          <div class="quiz-bar" aria-hidden="true"><span id="q-bar"></span></div>
+          <h2 class="quiz-question" id="q-text"></h2>
+          <div class="quiz-options" id="q-options"></div>
+          <div class="quiz-feedback" id="q-feedback" aria-live="polite" hidden>
+            <strong id="fb-title"></strong>
+            <span id="fb-text"></span>
+          </div>
+          <button class="btn btn-primary quiz-next" id="q-next" type="button" hidden>Next question →</button>
+          <p class="quiz-hint">Tip: press 1, 2, 3 or 4 on a keyboard to answer.</p>
+        </div>
+
+        <!-- RESULT -->
+        <div id="screen-result" class="quiz-screen" hidden>
+          <div class="quiz-big-emoji" id="r-emoji" aria-hidden="true">🏆</div>
+          <p class="eyebrow">Full time!</p>
+          <p class="quiz-final" id="r-score"></p>
+          <h2 class="quiz-heading" id="r-title"></h2>
+          <p class="quiz-lead" id="r-text"></p>
+          <p class="quiz-best" id="r-best"></p>
+          <div class="quiz-actions">
+            <button class="btn btn-primary" id="btn-again" type="button">🔄 Play again</button>
+            <a class="btn btn-ghost" href="index.html#players">Meet the players</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>PP Pro Path FC - Merulas</strong> · Built for fans of the beautiful game. · <a href="index.html">Home</a> · <a href="about.html">About</a></p>
+    <p class="credit">Not affiliated with any club, league or player.</p>
+  </footer>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

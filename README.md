@@ -8,6 +8,7 @@ A bold, animated website celebrating the greatest players in world football — 
 - **Player pop-up** with a large photo, honours, a short bio and prev/next navigation (arrow keys and Esc work too)
 - **"Did you know?" pop-ups** that slide in with a player photo and fact
 - **Daily pro tips**: a new diet tip and skill drill every day, with buttons for more (edit them in `tips.js`)
+- **Football quiz** (`quiz.html`): 30 shuffled questions with instant feedback, a final rating and a saved best score (edit them in `quiz.js`)
 - Animated stat counters, a scrolling honours ticker, and scroll-reveal effects
 - Fully responsive, no build step: plain HTML, CSS and JavaScript
 

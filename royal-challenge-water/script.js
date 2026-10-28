@@ -12,11 +12,12 @@ const BUSINESS = {
 
 // Your products. Change names, sizes, prices or add new ones.
 const PRODUCTS = [
-  { id: "250ml", name: "Pocket Bottle", size: "250 ml", price: 6,  pack: "Case of 48", tag: "Events", fill: 0.35 },
-  { id: "500ml", name: "On-the-Go",     size: "500 ml", price: 10, pack: "Case of 24", tag: "Popular", fill: 0.5 },
-  { id: "1l",    name: "Classic",       size: "1 L",    price: 20, pack: "Case of 12", tag: "",        fill: 0.65 },
-  { id: "2l",    name: "Family",        size: "2 L",    price: 32, pack: "Case of 9",  tag: "",        fill: 0.8 },
-  { id: "20l",   name: "Home & Office Jar", size: "20 L", price: 80, pack: "Returnable jar", tag: "Best value", fill: 0.95 },
+// price is for one "per" (a case, a bottle or a jar).
+  { id: "250ml", name: "Pocket Bottle", size: "250 ml", price: 220, per: "case", pack: "Case of 48", tag: "Events", fill: 0.35 },
+  { id: "500ml", name: "On-the-Go",     size: "500 ml", price: 140, per: "case", pack: "Case of 24", tag: "Popular", fill: 0.5 },
+  { id: "1l",    name: "Classic",       size: "1 L",    price: 100, per: "case", pack: "Case of 12", tag: "Best value", fill: 0.65 },
+  { id: "2l",    name: "Family",        size: "2 L",    price: 130, per: "case", pack: "Case of 9",  tag: "",        fill: 0.8 },
+  { id: "20l",   name: "Home & Office Jar", size: "20 L", price: 50, per: "jar", pack: "Returnable jar", tag: "", fill: 0.95 },
 ];
 
 const PROCESS = [
@@ -39,7 +40,7 @@ $("#product-grid").innerHTML = PRODUCTS.map((p) => `
     <div class="mini-bottle ${p.id === "20l" ? "jar" : ""}" style="--fill:${p.fill}"><span></span></div>
     <h3>${p.name}</h3>
     <p class="product-size">${p.size} · ${p.pack}</p>
-    <p class="product-price">${money(p.price)}<small> / unit</small></p>
+    <p class="product-price">${money(p.price)}<small> / ${p.per}</small></p>
     <a class="btn btn-small" href="#order" data-product="${p.id}">Order</a>
   </article>`).join("");
 
@@ -58,7 +59,7 @@ $("#year").textContent = new Date().getFullYear();
 // ---------- Order form ----------
 const form = $("#order-form");
 const productSelect = $("#order-product");
-productSelect.innerHTML = PRODUCTS.map((p) => `<option value="${p.id}">${p.name} (${p.size}) · ${money(p.price)}</option>`).join("");
+productSelect.innerHTML = PRODUCTS.map((p) => `<option value="${p.id}">${p.name} (${p.size}) · ${money(p.price)} per ${p.per}</option>`).join("");
 
 function updateTotal() {
   const p = PRODUCTS.find((x) => x.id === productSelect.value);
@@ -68,6 +69,10 @@ function updateTotal() {
 productSelect.addEventListener("change", updateTotal);
 form.qty.addEventListener("input", updateTotal);
 updateTotal();
+
+// Pre-select a product when arriving from another page, e.g. index.html?product=500ml#order
+const wanted = new URLSearchParams(location.search).get("product");
+if (PRODUCTS.some((p) => p.id === wanted)) { productSelect.value = wanted; updateTotal(); }
 
 document.querySelectorAll("[data-product]").forEach((a) =>
   a.addEventListener("click", () => { productSelect.value = a.dataset.product; updateTotal(); })
@@ -89,7 +94,7 @@ form.addEventListener("submit", (e) => {
     `Name: ${form.name.value}`,
     `Phone: ${form.phone.value}`,
     `Address: ${form.address.value}`,
-    `Product: ${p.name} (${p.size}) x ${qty} = ${money(p.price * qty)}`,
+    `Product: ${p.name} (${p.size}) x ${qty} ${p.per}(s) = ${money(p.price * qty)}`,
     form.notes.value ? `Notes: ${form.notes.value}` : "",
   ].filter(Boolean).join("\n");
 

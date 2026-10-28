@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quality &amp; Prices — Royal Challenge Water</title>
+  <meta name="description" content="Royal Challenge Water is a high-quality drinking water brand at low prices: 250 ml x 48 for ₹220, 500 ml x 24 for ₹140, 1 L x 12 for ₹100, 2 L x 9 for ₹130." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>" />
+</head>
+<body>
+  <header class="nav" id="top">
+    <a class="brand" href="index.html" aria-label="Royal Challenge Water home">
+      <span class="brand-crown" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><path d="M20 4c6 8 11 14 11 21a11 11 0 0 1-22 0c0-7 5-13 11-21z" /><path class="crown" d="M12 26l3-6 5 4 5-4 3 6z" /></svg>
+      </span>
+      <span class="brand-name">Royal Challenge <em>Water</em></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="index.html#about">About</a>
+      <a href="products.html">Still &amp; Sparkling</a>
+      <a href="pricing.html" aria-current="page">Prices</a>
+      <a href="index.html#process">Our process</a>
+      <a href="locations.html">Locations</a>
+      <a class="btn btn-small" href="index.html#order">Order now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Quality you can taste · Prices you'll love</p>
+      <h1>Premium water. <span class="gold">Low prices.</span></h1>
+      <p class="lead">Royal Challenge Water is a high-quality drinking water brand, purified, mineral-balanced and sealed fresh, at prices that make it easy to choose the best for your family and business.</p>
+      <div class="page-hero-stats">
+        <span>From just <strong id="lowest-price">₹0</strong> a bottle</span>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60c240 50 480 50 720 0s480-50 720 0v60H0z" /></svg>
+    </section>
+
+    <!-- QUALITY -->
+    <section class="section">
+      <div class="section-head reveal">
+        <p class="eyebrow">A high-quality water brand</p>
+        <h2>Quality is never compromised</h2>
+        <p>Low prices don't mean cutting corners. Every bottle gets the same careful treatment.</p>
+      </div>
+      <div class="why-grid quality-grid">
+        <div class="quality reveal"><span>🔬</span><h3>7-stage purification</h3><p>Sand and carbon filters, reverse osmosis, UV and ozone treatment.</p></div>
+        <div class="quality reveal"><span>⚗️</span><h3>Mineral-balanced</h3><p>Essential minerals added back for a fresh, natural taste.</p></div>
+        <div class="quality reveal"><span>🧪</span><h3>Batch tested</h3><p>Every production batch is quality-checked before it leaves the plant.</p></div>
+        <div class="quality reveal"><span>🔒</span><h3>Sealed fresh</h3><p>Filled and sealed hygienically, with a tamper-proof cap on every bottle.</p></div>
+      </div>
+    </section>
+
+    <!-- PRICES -->
+    <section class="section section-tint" id="prices">
+      <div class="section-head reveal">
+        <p class="eyebrow">Price list</p>
+        <h2>Great water at a cheap price</h2>
+        <p>Bottles are priced per case and the 20 L jar per refill. Buy more, save more trips.</p>
+      </div>
+      <div class="price-grid" id="price-grid"></div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="section" id="calculator">
+      <div class="split">
+        <div class="reveal">
+          <p class="eyebrow">Quick calculator</p>
+          <h2>How much will it cost?</h2>
+          <p>Choose a pack and the number of cases to see your total straight away.</p>
+        </div>
+        <div class="calc reveal">
+          <label>Pack<select id="calc-pack"></select></label>
+          <label>Number of cases / jars<input id="calc-cases" type="number" min="1" value="5" /></label>
+          <div class="calc-result">
+            <div><span>Bottles / jars</span><strong id="calc-bottles">0</strong></div>
+            <div><span>Total</span><strong id="calc-total">₹0</strong></div>
+          </div>
+          <a class="btn" id="calc-order" href="index.html#order">Order this</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="section-head reveal">
+        <p class="eyebrow">Bulk orders</p>
+        <h2>Ordering for a shop, office or event?</h2>
+        <p class="on-dark">Get in touch for large orders and regular deliveries.</p>
+        <a class="btn" href="index.html#order">Contact us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Royal Challenge Water</strong> · Pure drinking water, delivered.</p>
+    <p>&copy; <span id="year"></span> Royal Challenge Water. All rights reserved.</p>
+  </footer>
+
+  <script src="pricing.js"></script>
+</body>
+</html>

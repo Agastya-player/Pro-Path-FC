@@ -5,16 +5,17 @@
 // ==========================================================
 const CURRENCY = "₹";
 
+// price is for one "per" (a case, a can, a bottle or a jar).
 const RANGE = [
-  { type: "still", name: "Pocket Bottle", size: "250 ml", pack: "Case of 48", price: 6, fill: 0.35 },
-  { type: "still", name: "On-the-Go", size: "500 ml", pack: "Case of 24", price: 10, fill: 0.5, tag: "Popular" },
-  { type: "still", name: "Classic", size: "1 L", pack: "Case of 12", price: 20, fill: 0.65 },
-  { type: "still", name: "Family", size: "2 L", pack: "Case of 9", price: 32, fill: 0.8 },
-  { type: "still", name: "Home & Office Jar", size: "20 L", pack: "Returnable jar", price: 80, fill: 0.95, jar: true, tag: "Best value" },
-  { type: "sparkling", name: "Sparkling Original", size: "300 ml can", pack: "Case of 24", price: 30, fill: 0.6, tag: "New" },
-  { type: "sparkling", name: "Sparkling Lemon", size: "300 ml can", pack: "Case of 24", price: 35, fill: 0.6, flavour: "lemon" },
-  { type: "sparkling", name: "Sparkling Mint", size: "300 ml can", pack: "Case of 24", price: 35, fill: 0.6, flavour: "mint" },
-  { type: "sparkling", name: "Sparkling Royal Glass", size: "750 ml glass", pack: "Case of 12", price: 90, fill: 0.75, tag: "Premium" },
+  { type: "still", name: "Pocket Bottle", size: "250 ml", pack: "Case of 48", price: 220, per: "case", fill: 0.35 },
+  { type: "still", name: "On-the-Go", size: "500 ml", pack: "Case of 24", price: 140, per: "case", fill: 0.5, tag: "Popular" },
+  { type: "still", name: "Classic", size: "1 L", pack: "Case of 12", price: 100, per: "case", fill: 0.65, tag: "Best value" },
+  { type: "still", name: "Family", size: "2 L", pack: "Case of 9", price: 130, per: "case", fill: 0.8 },
+  { type: "still", name: "Home & Office Jar", size: "20 L", pack: "Returnable jar", price: 50, per: "jar", fill: 0.95, jar: true },
+  { type: "sparkling", name: "Sparkling Original", size: "300 ml can", pack: "Case of 24", price: 30, per: "can", fill: 0.6, tag: "New" },
+  { type: "sparkling", name: "Sparkling Lemon", size: "300 ml can", pack: "Case of 24", price: 35, per: "can", fill: 0.6, flavour: "lemon" },
+  { type: "sparkling", name: "Sparkling Mint", size: "300 ml can", pack: "Case of 24", price: 35, per: "can", fill: 0.6, flavour: "mint" },
+  { type: "sparkling", name: "Sparkling Royal Glass", size: "750 ml glass", pack: "Case of 12", price: 90, per: "bottle", fill: 0.75, tag: "Premium" },
 ];
 
 const COMPARE = [
@@ -37,7 +38,7 @@ grid.innerHTML = RANGE.map((p) => `
     <div class="mini-bottle ${p.jar ? "jar" : ""} ${p.type} ${p.flavour || ""}" style="--fill:${p.fill}"><span></span></div>
     <h3>${p.name}</h3>
     <p class="product-size">${p.size} · ${p.pack}</p>
-    <p class="product-price">${CURRENCY}${p.price}<small> / unit</small></p>
+    <p class="product-price">${CURRENCY}${p.price}<small> / ${p.per}</small></p>
     <a class="btn btn-small" href="index.html#order">Order</a>
   </article>`).join("");
 

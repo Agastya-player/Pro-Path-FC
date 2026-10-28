@@ -1,4 +1,4 @@
-// Bottle icons: the real bottle photo for 250 ml to 2 L, SVG drawings for the jar, cans and glass bottle. Every icon uses the same 100 x 200 canvas and
+// Bottle icons: real photos (bottle.png, jar.png) for 250 ml to 20 L, SVG drawings for the cans and glass bottle. Every icon uses the same 100 x 200 canvas and
 // sits on the same baseline, so the heights show the real size differences.
 // bottleIcon("500ml"), bottleIcon("can", "lemon"), bottleIcon("glass"), ...
 (function () {
@@ -11,13 +11,15 @@
   };
 
   // Real photo of the Royal Challenge bottle (bottle.png), scaled to each size.
-  const PHOTO_HEIGHTS = { "250ml": 92, "500ml": 126, "1l": 160, "2l": 186 };
-  const PHOTO_ASPECT = 222 / 752;
+  const PHOTO_HEIGHTS = { "250ml": 92, "500ml": 126, "1l": 160, "2l": 186, "20l": 176 };
+  const PHOTOS = { "20l": { src: "jar.png", aspect: 169 / 324 } };
+  const BOTTLE = { src: "bottle.png", aspect: 222 / 752 };
 
-  function photo(h) {
-    const w = h * PHOTO_ASPECT;
+  function photo(h, kind) {
+    const { src, aspect } = PHOTOS[kind] || BOTTLE;
+    const w = h * aspect;
     return `<ellipse cx="50" cy="197.5" rx="${f(w / 2 + 5)}" ry="2.2" fill="#0d1545" opacity=".18"/>` +
-      `<image href="bottle.png" x="${f(50 - w / 2)}" y="${f(196 - h)}" width="${f(w)}" height="${h}" preserveAspectRatio="xMidYMid meet"/>`;
+      `<image href="${src}" x="${f(50 - w / 2)}" y="${f(196 - h)}" width="${f(w)}" height="${h}" preserveAspectRatio="xMidYMid meet"/>`;
   }
 
   const SPECS = {
@@ -142,7 +144,7 @@
   }
 
   window.bottleIcon = function (kind, flavour) {
-    const inner = kind === "can" ? can(flavour) : PHOTO_HEIGHTS[kind] ? photo(PHOTO_HEIGHTS[kind]) : bottle(SPECS[kind] || SPECS["20l"]);
+    const inner = kind === "can" ? can(flavour) : PHOTO_HEIGHTS[kind] ? photo(PHOTO_HEIGHTS[kind], kind) : bottle(SPECS[kind] || SPECS["20l"]);
     return `<svg class="bottle-icon" viewBox="0 0 100 200" role="img" aria-label="${LABELS[kind] || "Bottle"}">${inner}</svg>`;
   };
 })();

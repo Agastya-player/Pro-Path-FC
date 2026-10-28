@@ -5,7 +5,7 @@
 const BUSINESS = {
   phone: "+91 00000 00000",          // shown on the site and used for "call"
   whatsapp: "",                      // e.g. "919876543210" (country code, no + or spaces). Leave "" to send orders by email instead.
-  email: "orders@example.com",       // orders are emailed here when whatsapp is ""
+  email: "ashvinichungi@gmail.com",    // orders are emailed here when whatsapp is ""
   address: "Your plant / office address, City",
   currency: "₹",
 };

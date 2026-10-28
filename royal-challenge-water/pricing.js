@@ -20,7 +20,7 @@ const orderLink = (p) => `index.html?product=${p.id}#order`;
 $("#price-grid").innerHTML = PRICES.map((p) => `
   <article class="price-card reveal">
     ${p.tag ? `<span class="product-tag">${p.tag}</span>` : ""}
-    <div class="mini-bottle ${p.jar ? "jar" : ""}" style="--fill:${p.fill}"><span></span></div>
+    ${bottleIcon(p.id)}
     <h3>${p.size}</h3>
     <p class="price-pack">${p.jar ? "Returnable jar refill" : `${p.bottles} bottles per case`}</p>
     <p class="price-big">₹${p.price}<small> / ${unit(p)}</small></p>

@@ -3,10 +3,10 @@
 //  Replace these placeholders with your real contact details.
 // ==========================================================
 const BUSINESS = {
-  phone: "+91 00000 00000",          // shown on the site and used for "call"
+  phone: "+91 77600090",              // shown on the site and used for "call"
   whatsapp: "",                      // e.g. "919876543210" (country code, no + or spaces). Leave "" to send orders by email instead.
   email: "ashvinichungi@gmail.com",    // orders are emailed here when whatsapp is ""
-  address: "Your plant / office address, City",
+  address: "Hyderabad",
   currency: "₹",
 };
 
@@ -37,7 +37,7 @@ const money = (n) => BUSINESS.currency + n.toLocaleString("en-IN");
 $("#product-grid").innerHTML = PRODUCTS.map((p) => `
   <article class="product reveal">
     ${p.tag ? `<span class="product-tag">${p.tag}</span>` : ""}
-    <div class="mini-bottle ${p.id === "20l" ? "jar" : ""}" style="--fill:${p.fill}"><span></span></div>
+    ${bottleIcon(p.id)}
     <h3>${p.name}</h3>
     <p class="product-size">${p.size} · ${p.pack}</p>
     <p class="product-price">${money(p.price)}<small> / ${p.per}</small></p>

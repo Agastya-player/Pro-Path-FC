@@ -143,14 +143,6 @@ img { max-width: 100%; }
 .product-price { font: 800 1.6rem "Playfair Display", serif; color: var(--aqua); margin: 0.5rem 0 1rem; }
 .product-price small { font: 500 0.8rem "Inter", sans-serif; color: var(--muted); }
 
-.mini-bottle {
-  position: relative; width: 52px; height: 110px; margin: 0 auto;
-  border: 2px solid var(--aqua-light); border-radius: 22px 22px 12px 12px; overflow: hidden;
-  background: var(--sky);
-}
-.mini-bottle::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 20px; height: 8px; background: #17a920; border-radius: 0 0 4px 4px; z-index: 1; }
-.mini-bottle span { position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--fill) * 100%); background: linear-gradient(var(--water-light), var(--water)); }
-.mini-bottle.jar { width: 86px; border-radius: 26px; }
 
 /* ---------- Process ---------- */
 .process { list-style: none; margin: 0 auto; padding: 0; max-width: 1150px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; }
@@ -289,7 +281,7 @@ img { max-width: 100%; }
 .vs-glass { position: relative; width: 80px; height: 110px; margin-bottom: 1.2rem; border: 3px solid var(--aqua-light); border-top: 0; border-radius: 0 0 18px 18px; overflow: hidden; clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%); }
 .vs-water { position: absolute; inset: 25% 0 0; background: linear-gradient(var(--water-light), var(--water)); }
 .fizz { position: absolute; inset: 25% 0 0; }
-.fizz::before, .fizz::after, .mini-bottle.sparkling::after {
+.fizz::before, .fizz::after {
   content: ""; position: absolute; inset: 0;
   background-image:
     radial-gradient(circle, rgba(255,255,255,0.95) 1.6px, transparent 2px),
@@ -310,9 +302,6 @@ img { max-width: 100%; }
 .type-pill { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.2em 0.7em; border-radius: 999px; margin-bottom: 0.8rem; }
 .type-pill.still { background: var(--sky); color: var(--aqua); }
 .type-pill.sparkling { background: var(--navy); color: var(--aqua-light); }
-.mini-bottle.sparkling::after { z-index: 0; top: auto; height: calc(var(--fill) * 100%); background-size: 10px 13px, 7px 9px; }
-.mini-bottle.lemon span { background: linear-gradient(#fff6b8, #e8d34a); }
-.mini-bottle.mint span { background: linear-gradient(#c9f5df, #4cc58f); }
 
 .table-wrap { max-width: 900px; margin: 0 auto; overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
 .compare { width: 100%; border-collapse: collapse; background: var(--white); min-width: 520px; }
@@ -358,3 +347,8 @@ img { max-width: 100%; }
 .customer > span { display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: var(--sky); font-size: 1.8rem; margin-bottom: 0.8rem; }
 .customer h3 { color: var(--navy); }
 .customer p { margin: 0; color: var(--muted); }
+
+/* ---------- Bottle icons ---------- */
+.bottle-icon { display: block; height: 150px; width: auto; max-width: 100%; margin: 0 auto; }
+.product .bottle-icon, .price-card .bottle-icon { transition: transform 0.25s; }
+.product:hover .bottle-icon, .price-card:hover .bottle-icon { transform: translateY(-4px) scale(1.04); }

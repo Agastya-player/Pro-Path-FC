@@ -3,7 +3,7 @@
 //  Replace these placeholders with your real contact details.
 // ==========================================================
 const BUSINESS = {
-  phone: "+91 77600090",              // shown on the site and used for "call"
+  phone: "+91 9177600090",            // shown on the site and used for "call"
   whatsapp: "",                      // e.g. "919876543210" (country code, no + or spaces). Leave "" to send orders by email instead.
   email: "ashvinichungi@gmail.com",    // orders are emailed here when whatsapp is ""
   address: "Hyderabad",

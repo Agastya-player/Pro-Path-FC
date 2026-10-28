@@ -1,4 +1,4 @@
-// Bottle icons drawn as SVG. Every icon uses the same 100 x 200 canvas and
+// Bottle icons: the real bottle photo for 250 ml to 2 L, SVG drawings for the jar, cans and glass bottle. Every icon uses the same 100 x 200 canvas and
 // sits on the same baseline, so the heights show the real size differences.
 // bottleIcon("500ml"), bottleIcon("can", "lemon"), bottleIcon("glass"), ...
 (function () {
@@ -10,11 +10,17 @@
     "20l": "20 litre jar", can: "300 ml sparkling can", glass: "750 ml glass bottle",
   };
 
+  // Real photo of the Royal Challenge bottle (bottle.png), scaled to each size.
+  const PHOTO_HEIGHTS = { "250ml": 92, "500ml": 126, "1l": 160, "2l": 186 };
+  const PHOTO_ASPECT = 222 / 752;
+
+  function photo(h) {
+    const w = h * PHOTO_ASPECT;
+    return `<ellipse cx="50" cy="197.5" rx="${f(w / 2 + 5)}" ry="2.2" fill="#0d1545" opacity=".18"/>` +
+      `<image href="bottle.png" x="${f(50 - w / 2)}" y="${f(196 - h)}" width="${f(w)}" height="${h}" preserveAspectRatio="xMidYMid meet"/>`;
+  }
+
   const SPECS = {
-    "250ml": { h: 92, w: 30, neck: 11, cap: 9 },
-    "500ml": { h: 126, w: 36, neck: 13, cap: 10 },
-    "1l": { h: 160, w: 44, neck: 14, cap: 11 },
-    "2l": { h: 186, w: 56, neck: 16, cap: 12 },
     "20l": { h: 178, w: 84, neck: 30, cap: 14, jar: true },
     glass: { h: 172, w: 34, neck: 11, cap: 9, glass: true },
   };
@@ -66,7 +72,7 @@
       `<path d="M${f(50 - bx)} ${yb - d + 1.6} Q50 ${yb - d + 4.6} ${f(50 + bx)} ${yb - d + 1.6}" stroke="rgba(255,255,255,.55)" stroke-width=".8" fill="none"/>`).join("");
     const handle = jar
       ? `<path d="M${f(50 + bx - 8)} ${f(y2 - 3)} C${f(50 + bx + 9)} ${f(y2 - 16)} ${f(50 + bx + 9)} ${f(y2 + 20)} ${f(50 + bx - 6)} ${f(y2 + 16)}" stroke="rgba(13,21,69,.4)" stroke-width="4.4" fill="none" stroke-linecap="round"/>` +
-        `<path d="M${f(50 + bx - 8)} ${f(y2 - 3)} C${f(50 + bx + 9)} ${f(y2 - 16)} ${f(50 + bx + 9)} ${f(y2 + 20)} ${f(50 + bx - 6)} ${f(y2 + 16)}" stroke="#9ed8ec" stroke-width="3" fill="none" stroke-linecap="round"/>`
+        `<path d="M${f(50 + bx - 8)} ${f(y2 - 3)} C${f(50 + bx + 9)} ${f(y2 - 16)} ${f(50 + bx + 9)} ${f(y2 + 20)} ${f(50 + bx - 6)} ${f(y2 + 16)}" stroke="#cfe3e8" stroke-width="3" fill="none" stroke-linecap="round"/>`
       : "";
     const liquid = glass
       ? `<rect x="0" y="${f(y1 + 1)}" width="100" height="200" fill="url(#${id}g)"/>`
@@ -75,7 +81,7 @@
 
     return (
       `<defs>` +
-      `<linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dff6fb"/><stop offset=".4" stop-color="#abdff0"/><stop offset="1" stop-color="#5ab6d8"/></linearGradient>` +
+      `<linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6fbfc"/><stop offset=".4" stop-color="#e2eef1"/><stop offset="1" stop-color="#c4d7dc"/></linearGradient>` +
       `<linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b5a2f"/><stop offset=".35" stop-color="#1f9a52"/><stop offset=".7" stop-color="#0f6d38"/><stop offset="1" stop-color="#083f21"/></linearGradient>` +
       `<linearGradient id="${id}s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".2" stop-color="#fff" stop-opacity="0"/><stop offset=".78" stop-color="#0d1545" stop-opacity="0"/><stop offset="1" stop-color="#0d1545" stop-opacity=".25"/></linearGradient>` +
       `<linearGradient id="${id}c" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0c8a17"/><stop offset=".3" stop-color="#3fdc4b"/><stop offset=".6" stop-color="#1fbd2b"/><stop offset="1" stop-color="#097012"/></linearGradient>` +
@@ -136,7 +142,7 @@
   }
 
   window.bottleIcon = function (kind, flavour) {
-    const inner = kind === "can" ? can(flavour) : bottle(SPECS[kind] || SPECS["500ml"]);
+    const inner = kind === "can" ? can(flavour) : PHOTO_HEIGHTS[kind] ? photo(PHOTO_HEIGHTS[kind]) : bottle(SPECS[kind] || SPECS["20l"]);
     return `<svg class="bottle-icon" viewBox="0 0 100 200" role="img" aria-label="${LABELS[kind] || "Bottle"}">${inner}</svg>`;
   };
 })();

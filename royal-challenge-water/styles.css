@@ -6,8 +6,8 @@
   --sky: #eaf7ee;
   --gold: #d9a82e;
   --gold-light: #f4d77c;
-  --water: #4fb6d6;
-  --water-light: #bfe9f2;
+  --water: #c4d7dc;
+  --water-light: #f4fafb;
   --ink: #141a2e;
   --muted: #5a6580;
   --white: #ffffff;
@@ -102,7 +102,7 @@ img { max-width: 100%; }
 /* Big bottle */
 .hero-art { display: flex; justify-content: center; }
 .bottle-wrap { animation: float 5s ease-in-out infinite; }
-.bottle-svg { display: block; width: min(250px, 60vw); height: auto; filter: drop-shadow(0 26px 26px rgba(13, 21, 69, 0.22)); }
+.bottle-photo { display: block; height: clamp(320px, 56vh, 480px); width: auto; max-width: 100%; filter: drop-shadow(0 26px 22px rgba(13, 21, 69, 0.28)); }
 @keyframes float { 50% { transform: translateY(-14px) rotate(-1.5deg); } }
 
 /* ---------- Stats ---------- */

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Royal Challenge Water — Pure Drinking Water</title>
+  <meta name="description" content="Royal Challenge Water: purified, mineral-balanced drinking water in bottles and 20 L jars, delivered to homes and offices." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>" />
+</head>
+<body>
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Royal Challenge Water home">
+      <span class="brand-crown" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><path d="M20 4c6 8 11 14 11 21a11 11 0 0 1-22 0c0-7 5-13 11-21z" /><path class="crown" d="M12 26l3-6 5 4 5-4 3 6z" /></svg>
+      </span>
+      <span class="brand-name">Royal Challenge <em>Water</em></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="products.html">Still &amp; Sparkling</a>
+      <a href="#process">Our process</a>
+      <a href="#why">Why us</a>
+      <a href="locations.html">Locations</a>
+      <a class="btn btn-small" href="#order">Order now</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Purified · Mineral-balanced · Sealed fresh</p>
+        <h1>Water fit for <span class="gold">royalty.</span></h1>
+        <p class="lead">Every drop of Royal Challenge Water goes through a multi-stage purification process and is enriched with essential minerals, so you get water that is safe, crisp and refreshing.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#order">Order delivery</a>
+          <a class="btn btn-ghost" href="#products">See products</a>
+        </div>
+      </div>
+      <div class="hero-art reveal" aria-hidden="true">
+        <div class="bottle">
+          <div class="bottle-cap"></div>
+          <div class="bottle-neck"></div>
+          <div class="bottle-body">
+            <div class="bottle-water"></div>
+            <div class="bottle-label">
+              <span class="label-crown">♛</span>
+              <strong>Royal Challenge</strong>
+              <small>Packaged Drinking Water</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60c240 50 480 50 720 0s480-50 720 0v60H0z" /></svg>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat reveal"><span class="stat-num" data-target="7">0</span><span class="stat-label">purification stages</span></div>
+      <div class="stat reveal"><span class="stat-num" data-target="100" data-suffix="%">0</span><span class="stat-label">sealed &amp; tamper-proof</span></div>
+      <div class="stat reveal"><span class="stat-num" data-target="24" data-suffix="h">0</span><span class="stat-label">delivery window</span></div>
+      <div class="stat reveal"><span class="stat-num" data-target="5">0</span><span class="stat-label">pack sizes</span></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="split">
+        <div class="reveal">
+          <p class="eyebrow">About us</p>
+          <h2>Pure water. No compromises.</h2>
+          <p>Royal Challenge Water was started with one simple idea: everyone deserves clean, great-tasting drinking water. We source water carefully, purify it with modern technology and pack it in hygienic, sealed containers.</p>
+          <p>Whether it's a single bottle on the go or 20&nbsp;L jars for your home, office or event, we take care of the quality and you just enjoy the water.</p>
+        </div>
+        <ul class="values reveal">
+          <li><span>💧</span><div><strong>Purity first</strong><p>Tested at every stage before it leaves our plant.</p></div></li>
+          <li><span>⚗️</span><div><strong>Balanced minerals</strong><p>Essential minerals added back for a crisp, natural taste.</p></div></li>
+          <li><span>♻️</span><div><strong>Responsible packaging</strong><p>Returnable jars and recyclable bottles.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section section-tint" id="products">
+      <div class="section-head reveal">
+        <p class="eyebrow">Our range</p>
+        <h2>A size for every need</h2>
+        <p>From your bag to your boardroom. Prices are per unit. Also try our <a href="products.html">sparkling water →</a></p>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="section-head reveal">
+        <p class="eyebrow">How we purify</p>
+        <h2>Seven stages to perfect water</h2>
+      </div>
+      <ol class="process" id="process-list"></ol>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section section-dark" id="why">
+      <div class="section-head reveal">
+        <p class="eyebrow">Why Royal Challenge</p>
+        <h2>Trusted by homes, offices &amp; events</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why reveal"><span>🚚</span><h3>Fast doorstep delivery</h3><p>Order today and get it within 24 hours.</p></div>
+        <div class="why reveal"><span>🔒</span><h3>Tamper-proof seal</h3><p>Every bottle and jar is sealed right after filling.</p></div>
+        <div class="why reveal"><span>🧪</span><h3>Lab-tested batches</h3><p>Regular quality checks on every production batch.</p></div>
+        <div class="why reveal"><span>🏢</span><h3>Bulk &amp; event orders</h3><p>Special rates for offices, shops, weddings and parties.</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head reveal">
+        <p class="eyebrow">Questions</p>
+        <h2>Frequently asked</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>Do you deliver to homes?</summary><p>Yes. We deliver bottles and 20 L jars to homes, apartments, offices and shops in our service area.</p></details>
+        <details><summary>Are the 20 L jars returnable?</summary><p>Yes. Pay a one-time jar deposit, then swap your empty jar for a full one on every refill.</p></details>
+        <details><summary>Can I set up a regular delivery?</summary><p>Of course. Tell us how many jars you need each week in the order form and we'll set up a schedule.</p></details>
+        <details><summary>How do I pay?</summary><p>Cash or UPI on delivery. Businesses can also ask about monthly billing.</p></details>
+      </div>
+    </section>
+
+    <!-- ORDER -->
+    <section class="section section-tint" id="order">
+      <div class="split">
+        <div class="reveal">
+          <p class="eyebrow">Order &amp; contact</p>
+          <h2>Get Royal Challenge Water delivered</h2>
+          <p>Fill in the form and we'll confirm your order quickly.</p>
+          <ul class="contact">
+            <li><span>📞</span><a id="contact-phone" href="#"></a></li>
+            <li><span>✉️</span><a id="contact-email" href="#"></a></li>
+            <li><span>📍</span><span id="contact-address"></span></li>
+            <li><span>🏭</span><a href="locations.html">See all our factories in Telangana →</a></li>
+          </ul>
+        </div>
+        <form class="order-form reveal" id="order-form" novalidate>
+          <label>Your name<input name="name" required autocomplete="name" /></label>
+          <label>Phone number<input name="phone" type="tel" required autocomplete="tel" /></label>
+          <label>Delivery address<textarea name="address" rows="2" required autocomplete="street-address"></textarea></label>
+          <div class="form-row">
+            <label>Product<select name="product" id="order-product"></select></label>
+            <label>Quantity<input name="qty" type="number" min="1" value="1" required /></label>
+          </div>
+          <label>Notes (optional)<input name="notes" placeholder="e.g. weekly delivery, best time to call" /></label>
+          <p class="order-total" id="order-total"></p>
+          <button class="btn" type="submit">Send order</button>
+          <p class="form-msg" id="form-msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Royal Challenge Water</strong> · Pure drinking water, delivered.</p>
+    <p>&copy; <span id="year"></span> Royal Challenge Water. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

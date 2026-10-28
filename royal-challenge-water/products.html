@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Still &amp; Sparkling — Royal Challenge Water</title>
+  <meta name="description" content="Royal Challenge Water still and sparkling (carbonated) water products: sizes, flavours and how they compare." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>" />
+</head>
+<body>
+  <header class="nav" id="top">
+    <a class="brand" href="index.html" aria-label="Royal Challenge Water home">
+      <span class="brand-crown" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><path d="M20 4c6 8 11 14 11 21a11 11 0 0 1-22 0c0-7 5-13 11-21z" /><path class="crown" d="M12 26l3-6 5 4 5-4 3 6z" /></svg>
+      </span>
+      <span class="brand-name">Royal Challenge <em>Water</em></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="index.html#about">About</a>
+      <a href="products.html" aria-current="page">Still &amp; Sparkling</a>
+      <a href="index.html#process">Our process</a>
+      <a href="locations.html">Locations</a>
+      <a class="btn btn-small" href="index.html#order">Order now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Our water range</p>
+      <h1><span class="gold">Still</span> or <span class="sparkle-text">Sparkling?</span></h1>
+      <p class="lead">Two ways to enjoy pure Royal Challenge Water: calm and crisp, or full of fizz. Explore the range and see how they compare.</p>
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60c240 50 480 50 720 0s480-50 720 0v60H0z" /></svg>
+    </section>
+
+    <!-- SIDE BY SIDE -->
+    <section class="section">
+      <div class="versus">
+        <article class="vs-card vs-still reveal">
+          <div class="vs-glass" aria-hidden="true"><span class="vs-water"></span></div>
+          <p class="eyebrow">Still water</p>
+          <h2>Pure &amp; calm</h2>
+          <p>Purified, mineral-balanced water with no gas. Smooth, light and perfect for every day: at home, at work, in the gym or with meals.</p>
+          <ul class="vs-points">
+            <li>✔ No added gas, naturally smooth</li>
+            <li>✔ Best for daily hydration</li>
+            <li>✔ Bottles from 250 ml to 20 L jars</li>
+          </ul>
+          <a class="btn btn-small" href="#range" data-tab="still">See still range</a>
+        </article>
+        <div class="vs-badge reveal" aria-hidden="true">VS</div>
+        <article class="vs-card vs-sparkling reveal">
+          <div class="vs-glass" aria-hidden="true"><span class="vs-water"></span><span class="fizz"></span></div>
+          <p class="eyebrow">Sparkling water</p>
+          <h2>Bright &amp; bubbly</h2>
+          <p>The same pure water, carbonated for a lively, refreshing fizz. A great sugar-free swap for soft drinks and a classy mixer.</p>
+          <ul class="vs-points">
+            <li>✔ Carbonated for fine bubbles</li>
+            <li>✔ Zero sugar, zero calories</li>
+            <li>✔ Plain, lemon and mint flavours</li>
+          </ul>
+          <a class="btn btn-small" href="#range" data-tab="sparkling">See sparkling range</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- RANGE -->
+    <section class="section section-tint" id="range">
+      <div class="section-head reveal">
+        <p class="eyebrow">Full range</p>
+        <h2>Pick your water</h2>
+      </div>
+      <div class="tabs reveal" role="tablist" aria-label="Water type">
+        <button class="tab active" type="button" role="tab" data-filter="all" aria-selected="true">All</button>
+        <button class="tab" type="button" role="tab" data-filter="still" aria-selected="false">💧 Still</button>
+        <button class="tab" type="button" role="tab" data-filter="sparkling" aria-selected="false">🫧 Sparkling</button>
+      </div>
+      <div class="product-grid" id="range-grid"></div>
+    </section>
+
+    <!-- COMPARE -->
+    <section class="section" id="compare">
+      <div class="section-head reveal">
+        <p class="eyebrow">Side by side</p>
+        <h2>How they compare</h2>
+      </div>
+      <div class="table-wrap reveal">
+        <table class="compare">
+          <thead><tr><th scope="col"></th><th scope="col">💧 Still</th><th scope="col">🫧 Sparkling</th></tr></thead>
+          <tbody id="compare-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="section-head reveal">
+        <p class="eyebrow">Can't decide?</p>
+        <h2>Try both</h2>
+        <p class="on-dark">Order a mixed case of still and sparkling and find your favourite.</p>
+        <a class="btn" href="index.html#order">Order now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Royal Challenge Water</strong> · Pure drinking water, delivered.</p>
+    <p>&copy; <span id="year"></span> Royal Challenge Water. All rights reserved.</p>
+  </footer>
+
+  <script src="products.js"></script>
+</body>
+</html>

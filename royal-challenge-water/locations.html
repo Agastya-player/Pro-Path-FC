@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Locations — Royal Challenge Water</title>
+  <meta name="description" content="Royal Challenge Water factories and delivery depots across Telangana." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>" />
+</head>
+<body>
+  <header class="nav" id="top">
+    <a class="brand" href="index.html" aria-label="Royal Challenge Water home">
+      <span class="brand-crown" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><path d="M20 4c6 8 11 14 11 21a11 11 0 0 1-22 0c0-7 5-13 11-21z" /><path class="crown" d="M12 26l3-6 5 4 5-4 3 6z" /></svg>
+      </span>
+      <span class="brand-name">Royal Challenge <em>Water</em></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="index.html#about">About</a>
+      <a href="products.html">Still &amp; Sparkling</a>
+      <a href="index.html#process">Our process</a>
+      <a href="locations.html" aria-current="page">Locations</a>
+      <a class="btn btn-small" href="index.html#order">Order now</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Our locations</p>
+      <h1>Serving all of <span class="gold">Telangana</span></h1>
+      <p class="lead">Our factories and delivery depots across the state keep fresh water close to you. Pick a location to see it on the map.</p>
+      <div class="page-hero-stats">
+        <span><strong id="count-factories">0</strong> factories</span>
+        <span><strong id="count-depots">0</strong> delivery depots</span>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60c240 50 480 50 720 0s480-50 720 0v60H0z" /></svg>
+    </section>
+
+    <section class="section locations">
+      <div class="locations-layout">
+        <div class="locations-side reveal">
+          <div class="locations-head">
+            <h2>Factories &amp; depots</h2>
+            <button class="btn btn-small btn-outline" id="show-all" type="button">Show all Telangana</button>
+          </div>
+          <ul class="location-list" id="location-list"></ul>
+        </div>
+        <figure class="map-wrap reveal">
+          <iframe id="map-frame" title="Map of Royal Challenge Water location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <figcaption id="map-caption"></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="section-head reveal">
+        <p class="eyebrow">Not near a location?</p>
+        <h2>We deliver across Telangana</h2>
+        <p>Place an order and our nearest depot will bring it to your door.</p>
+        <a class="btn" href="index.html#order">Order delivery</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Royal Challenge Water</strong> · Pure drinking water, delivered.</p>
+    <p>&copy; <span id="year"></span> Royal Challenge Water. All rights reserved.</p>
+  </footer>
+
+  <script src="locations.js"></script>
+</body>
+</html>

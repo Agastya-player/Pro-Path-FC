@@ -361,10 +361,7 @@ img { max-width: 100%; }
   border-radius: 50%; background: radial-gradient(ellipse at center, rgba(13, 21, 69, 0.5), rgba(13, 21, 69, 0) 70%);
   filter: blur(3px);
 }
-.hero-art::after {
-  content: ""; position: absolute; left: 50%; bottom: -26px; z-index: 0;
-  width: min(400px, 100%); height: 74px; transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 45%, rgba(255, 255, 255, 0.95) 0%, rgba(214, 238, 248, 0.75) 36%, rgba(160, 210, 232, 0.35) 60%, rgba(255, 255, 255, 0) 72%);
-}
+.splash { position: absolute; left: 50%; bottom: -64px; width: min(470px, 130%); height: auto; transform: translateX(-50%); pointer-events: none; }
+.splash-back { z-index: 0; opacity: 0.95; }
+.splash-front { z-index: 2; -webkit-mask-image: linear-gradient(to top, #000 0%, #000 40%, transparent 64%); mask-image: linear-gradient(to top, #000 0%, #000 40%, transparent 64%); }
 .bottle-wrap { position: relative; z-index: 1; }

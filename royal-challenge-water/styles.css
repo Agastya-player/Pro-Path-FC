@@ -75,7 +75,7 @@ img { max-width: 100%; }
   min-height: 100vh;
   display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 2rem;
   padding: 7rem clamp(1rem, 6vw, 6rem) 8rem;
-  background: linear-gradient(90deg, rgba(238, 252, 243, 0.9) 0%, rgba(238, 252, 243, 0.55) 38%, rgba(238, 252, 243, 0) 68%), url("scene.jpg") center bottom / cover no-repeat, #7fb8d6;
+  background: linear-gradient(90deg, rgba(238, 252, 243, 0.92) 0%, rgba(238, 252, 243, 0.62) 36%, rgba(238, 252, 243, 0) 66%), url("scene.jpg") center / cover no-repeat, #7fb8d6;
   color: var(--navy);
   overflow: hidden;
 }
@@ -220,7 +220,7 @@ img { max-width: 100%; }
 .page-hero {
   position: relative; overflow: hidden;
   padding: 8rem clamp(1rem, 6vw, 6rem) 7rem; text-align: center;
-  background: linear-gradient(rgba(238, 252, 243, 0.72), rgba(238, 252, 243, 0.4)), url("scene.jpg") center bottom / cover no-repeat, #7fb8d6;
+  background: linear-gradient(rgba(238, 252, 243, 0.72), rgba(238, 252, 243, 0.4)), url("scene.jpg") center / cover no-repeat, #7fb8d6;
   color: var(--navy);
 }
 .page-hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
@@ -353,13 +353,18 @@ img { max-width: 100%; }
 .product .bottle-icon, .price-card .bottle-icon { transition: transform 0.25s; }
 .product:hover .bottle-icon, .price-card:hover .bottle-icon { transform: translateY(-4px) scale(1.04); }
 
-/* ---------- Hero podium ---------- */
+/* ---------- Hero splash base ---------- */
 .hero-art { position: relative; }
+.hero-art::before {
+  content: ""; position: absolute; left: 50%; bottom: -6px; z-index: 0;
+  width: min(170px, 60%); height: 20px; transform: translateX(-50%);
+  border-radius: 50%; background: radial-gradient(ellipse at center, rgba(13, 21, 69, 0.5), rgba(13, 21, 69, 0) 70%);
+  filter: blur(3px);
+}
 .hero-art::after {
   content: ""; position: absolute; left: 50%; bottom: -26px; z-index: 0;
-  width: min(360px, 90%); height: 64px; transform: translateX(-50%);
+  width: min(400px, 100%); height: 74px; transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 35%, #ffffff 0%, #e4ecec 55%, #b9c9cb 100%);
-  box-shadow: 0 18px 30px -10px rgba(13, 21, 69, 0.35);
+  background: radial-gradient(ellipse at 50% 45%, rgba(255, 255, 255, 0.95) 0%, rgba(214, 238, 248, 0.75) 36%, rgba(160, 210, 232, 0.35) 60%, rgba(255, 255, 255, 0) 72%);
 }
 .bottle-wrap { position: relative; z-index: 1; }

@@ -101,8 +101,6 @@ img { max-width: 100%; }
 
 /* Big bottle */
 .hero-art { display: flex; justify-content: center; }
-.bottle-wrap { animation: float 5s ease-in-out infinite; }
-.bottle-photo { display: block; height: clamp(320px, 56vh, 480px); width: auto; max-width: 100%; filter: drop-shadow(0 26px 22px rgba(13, 21, 69, 0.28)); }
 @keyframes float { 50% { transform: translateY(-8px); } }
 
 /* ---------- Stats ---------- */
@@ -353,15 +351,23 @@ img { max-width: 100%; }
 .product .bottle-icon, .price-card .bottle-icon { transition: transform 0.25s; }
 .product:hover .bottle-icon, .price-card:hover .bottle-icon { transform: translateY(-4px) scale(1.04); }
 
-/* ---------- Hero splash base ---------- */
-.hero-art { position: relative; }
-.hero-art::before {
-  content: ""; position: absolute; left: 50%; bottom: -6px; z-index: 0;
-  width: min(170px, 60%); height: 20px; transform: translateX(-50%);
-  border-radius: 50%; background: radial-gradient(ellipse at center, rgba(13, 21, 69, 0.5), rgba(13, 21, 69, 0) 70%);
-  filter: blur(3px);
+
+/* ---------- Home hero: photo with the bottle, headline on the right ---------- */
+.hero {
+  grid-template-columns: 1fr 1fr;
+  background:
+    linear-gradient(270deg, rgba(238, 249, 253, 0.93) 0%, rgba(238, 249, 253, 0.82) 30%, rgba(238, 249, 253, 0.5) 45%, rgba(238, 249, 253, 0) 55%),
+    url("hero.jpg") center 30% / cover no-repeat, #8cc3ee;
 }
-.splash { position: absolute; left: 50%; bottom: -64px; width: min(470px, 130%); height: auto; transform: translateX(-50%); pointer-events: none; }
-.splash-back { z-index: 0; opacity: 0.95; }
-.splash-front { z-index: 2; -webkit-mask-image: linear-gradient(to top, #000 0%, #000 40%, transparent 64%); mask-image: linear-gradient(to top, #000 0%, #000 40%, transparent 64%); }
-.bottle-wrap { position: relative; z-index: 1; }
+.hero-copy { grid-column: 2; }
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding-bottom: 580px;
+    background:
+      linear-gradient(to bottom, #d3eafa 0, #d3eafa calc(100% - 580px), rgba(211, 234, 250, 0) calc(100% - 470px)),
+      url("hero.jpg") 41% 100% / auto 580px no-repeat, #d3eafa;
+  }
+  .hero-copy { grid-column: 1; }
+}
